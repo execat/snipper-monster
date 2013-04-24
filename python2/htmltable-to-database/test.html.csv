@@ -1,0 +1,74 @@
+Name,Description,Author,Adds Context Menu Item?,Download / Compatibility,License,Known issues/Notes
+Disc Numbers,Moves (disc X) from releases titles into separate tags ( discnumber and discsubtitle ).,Lukáš Lalinský,No,0.9 - 1.0,(unspecified),-
+Classic Disc Numbers,Reverts to pre-NGS (aka \"Classic\") behaviour by adding (disc X: discTitle) to release titles into separate tags ( discnumber and discsubtitle ).,Lukáš Lalinský,No,0.15 - 1.0,(unspecified),Broken in 0.15.1 (OK in later releases); workaround version of plugin available on forum here .
+Remove Feat. Artists from Titles,Removes (feat. Artist) parts from track titles.,Lukáš Lalinský,No,0.9 - 1.0,(unspecified),-
+Move Feat. Artists to Titles,Move \"feat.\" from artist names to album and track titles. e.g. \"A feat. B - Song\" becomes \"A - Song (feat. B).\","Lukáš Lalinský , Michael Wiencek",No,0.9 - 1.0,(unspecified),-
+Title Case,Converts track and release titles to Title Case (capitalizes first character of every word),"Javier Kohen, Lukáš Lalinský",No,0.9 - 1.0,GPLv2,-
+Cover Art Downloader,Downloads cover art for optional tag embedding and/or saving as a separate image file (using standard Options >> Cover Art Picard settings),"Oliver Charles , Philipp Wolfer",No,"0.9 - 0.11
+
+						0.12 - 0.14
+
+						0.15 - 1.1
+
+						Integrated in 1.2",GPLv2,-
+Last.fm Tags,Use Last.fm tags as \"genre\",Lukáš Lalinský,No,"0.15 - 1.0 (file 1)
+
+						0.15 - 1.0 (file 2)",(unspecified),(copy both files to directory plugins/lastfm/ )
+Last.fm Plus,Use Last.fm tags as \"grouping/genre/moods/occasions/countries/originalyear\" and more. Modified version of above plugin.,"RifRaf , voiceinsideyou",No,0.15 - 1.0,(unspecified),"Unzip into plugins folder. (so you have plugins/lastfmplus/__init__.py etc) Documentation , forum thread"
+Add Cluster As A Release,Adds right click option to an unmatched cluster to allow adding releases to MB based on tags.,"Lukáš Lalinský , Philip Jägenstedt",Yes,"0.9 - 0.16
+
+						1.0",GPLv2 or later,-
+Generate Cuesheet,Generates a cuesheet from a release,Lukáš Lalinský,Yes,0.10 - 1.0,(unspecified),-
+Release Type,"Appends information to EPs and Singles such as \" EP\" or \" (single)\" (customisable, see file for details). Useful for separating releases with singles/EPs of the same name.",Elliot Chance,No,0.9 - 1.0,(unspecified),-
+No Release,Do not store specific release information in releases of unknown origin.,hrglgrmpf,Yes,0.15 - 1.0,(unspecified),See forum post for details.
+Search Plugins,Launch searches for clusters or releases to external non-MB websites from Picard,Brian Schweitzer,Yes,0.9 - 1.0,(unspecified),"Plugins available for:
+						
+							
+								All Music Guide
+							
+								Amazon (supports: .ca, .com, .de, .fr, .jp, and .co.uk)
+							
+								CastAlbums.org (musicals)
+							
+								DiscogsFilmMusziek.be (film music)
+							
+								eBay
+							
+								Game Music Revolution (game soundtracks)
+							
+								Google
+							
+								The Lortel Archives (off-Broadway musicals)
+							
+								SoundtrackCollector.org (soundtracks)
+							
+								SoundtrackINFO (soundtracks)"
+Change Encoding,Converts the tags of individual files or clusters between different character encodings. This is often necessary with files that have only ID3v1 tags in a non-Latin encoding.,Philip J�genstedt,Yes,0.9 - 0.12,GPLv2 or later,"You will probably only need to change the target encoding. If the encoding you're looking for isn't in the list, you can type it in yourself and it will hopefully work."
+Original Release Date,Set the original release date of a release by using the release events and \"earliest release\" advanced relationships.,Philipp Wolfer,No,0.12,GPLv2 or later,Not needed for newer versions of Picard which support the�%originaldate% tag directly.
+Title sort names,Guess sortnames for track and album titles and adds as titlesort and albumsort tags.,Creap,No,0.12 - 1.0,(unspecified),"Checks language (English, Spanish, German, French, Italian, Swedish) and moves articles (\"The\", \"Das\", etc) to the end of the track/album title in the sort tags."
+Title version,"Moves song metadata such as \"demo\", \"live\" from titlesort to version tag.",Creap,No,0.12 - 1.0,(unspecified),"Searches titles for keywords like live , demo , mix , etc, and moves it from titles to version tags."
+$swapprefix function,"Adds the $swapprefix(text, *prefixes) script function, which moves the specified prefixes to the end of the text.",Philipp Wolfer,No,0.9 - 1.0,GPLv2 or later,See this forum post for details.
+Lookup PUID,Adds the ability to lookup the PUID on MusicBrainz (useful in case there are several tracks linked with the same PUID),WPME Hofland,Yes,0.12,(unspecified),�
+TSO2,"Set TSO2 as well as TXXX:ALBUMARTISTSORTORDER in ID3 tags, so album artist sort order works in iTunes and other players",Andrew Barnert,No,0.12,(unspecified),See this forum post for details.
+Add to iTunes,Mac OS X only! Add an album/track/etc. to iTunes.,Andrew Barnert,Yes,0.12,(unspecified),See this forum post for details.
+The Sorting Plugin,"Allows sorting of clusters and releases (i.e. both panes) through the right click \"Plugins\" menu. (can sort either Clusters or Releases by Artist or Title, and within a cluster by artist or title)",Aaron Lambers,Yes,0.12,(unspecified),See this forum post for details.
+Discnumber and Bonus disc,Combination of the discnumber and bonus disc plugin,WPME Hofland,No,0.12,(unspecified),�
+Convert Typographic Punctuation,Replace hard-to-type-into-search-boxes fancy punctuation with Latin-1 equivalents,anonymous,No,0.9 - 0.12,WTFPL,See forum and bug ticket for details.
+Foobar2000 ReplayGain,Analyse your albums using the foobar2000 ReplayGain scanner.,hrglgrmpf,Yes,0.10 - 1.0,(unspecified),See forum post for details.
+MetaFlac ReplayGain,Analyse your albums using the MetaFlac ReplayGain scanner.,Olivier Kaloudoff,Yes,0.10 - 1.0,(unspecified),Tested only on Mac OSX / Feedback to kalou at kalou dot net
+"$eq2, $ne2 functions","Each plugin adds a new function to taggerscript, to allow comparison of a variable against more than one string.
+						
+							Example: set�%engineer% to \"test\" if the artist is equal to \"foo\", \"bar\", or \"baz\":
+						
+$if($eq2(%artist%,foo,bar,baz),$set(engineer,test))",Brian Schweitzer,No,0.12 - 1.0,(unspecified),See forum post for details.
+$p function,"Adds an $p(string, unofficial) function to taggerscript. This works like the inverse of a \p{foo} regex using Unicode properties. In other words, it tells you what script a character belongs to.
+						
+							Usage:
+						
+$p(%something%)   $p(%something%, True)
+						
+							The second argument is optional. By default, it is set to False. When set to True, unofficial Unicode scripts (i.e. ConScript, etc.) are also checked.",Brian Schweitzer,No,0.12 - 1.0,(unspecified),See forum post for details.
+Open in GUI,Open files/folders in the GUI environment.,Michael Elsd�rfer,Yes,0.9 - 1.0,(unspecified),�
+Remove Perfect albums,Remove \"Perfect\" matches from album list i.e. all tracks matched and tags saved.,ichneumon,Yes,0.15 - 1.0,(unspecified),See forum post for details.
+Autosave complete albums,"Save albums with 4+ tracks and 90%+ confidence on all tracks, then remove them from the album list. Useful when importing a big, relatively well-tagged collection.",encukou,Yes,0.15 - 1.0,(unspecified),See forum post for details.
+Sidecars,Stores and retrieves metadata in \"sidecar\" files so that changes can be staged.,Tony Flaks,Yes,0.14,(unspecified),See wiki page for details.
