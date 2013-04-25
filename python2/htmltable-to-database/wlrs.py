@@ -1,3 +1,16 @@
+#!/usr/bin/env python
+"""
+From: original content
+Found this table on Picard plugins wiki page, that contained a table of data
+containing information on who wrote the plugin, name of plugin, description.
+Thought it would be better if it was represented as a JSON or sqlite3 DB.
+
+Requrements:
+1. Store the XML/HTML data in test.nonewline.xml file.
+2. Execute this script.
+"""
+
+
 from BeautifulSoup import BeautifulSoup
 import sqlite3
 
@@ -22,6 +35,8 @@ def stripTd(string):
     return string[5:][:-5]
 
 restOfRows = table.contents[1:]
+
+# Prints the data
 """
 for row in restOfRows:
     colEntry = BeautifulSoup(str(row)).findAll('td')
@@ -36,6 +51,7 @@ for row in restOfRows:
     print (str(col[6]) + ": " + stripTd(str(colEntry[6])))
 """
 
+# Saves the data in an sqlite3 database
 conn = sqlite3.connect('sqlite_file.db')
 conn.text_factory = str
 c = conn.cursor()
@@ -60,24 +76,3 @@ for row in restOfRows:
 conn.commit()
 conn.close()
 
-
-
-
-"""
-    print ("%s: %s" % (col[0], colEntry[0]))
-    print ("%s: %s" % (col[1], colEntry[1]))
-    print ("%s: %s" % (col[2], colEntry[2]))
-    print ("%s: %s" % (col[3], colEntry[3]))
-    print ("%s: %s" % (col[4], colEntry[4]))
-    print ("%s: %s" % (col[5], colEntry[5]))
-    print ("%s: %s" % (col[6], colEntry[6]))
-"""
-"""
-for x in range(0, numberOfCols):
-    print ("%s" % firstRow
-
-restOfRows = table.contents[1:]
-for row in restOfRows:
-    for x in range(0, numberOfCols):
-        print ("col data: %s" % row.contents[x].string
-"""
