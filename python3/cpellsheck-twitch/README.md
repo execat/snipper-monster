@@ -554,3 +554,8 @@ Here's a list of the 500 randomly selected error-words put as input to the spell
 | 498 | bother  | botheeRR  | bother  |
 | 499 | yours | YYeeoRs | yours |
 | 500 | previously  | prEEVioaisly  | previously  |
+
+```
+False corrections:  76
+No suggestions:  6
+```
