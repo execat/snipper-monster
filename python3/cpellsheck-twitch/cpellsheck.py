@@ -1,6 +1,6 @@
-# cpellsheck-lolrus.py
+# cpellsheck.py
 # Populated with words after calling prepare_wordlist()
-words = dict()
+words = {}
 
 def process_word(word):
     # Lowercase

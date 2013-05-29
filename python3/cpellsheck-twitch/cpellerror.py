@@ -1,6 +1,5 @@
-# cpellerror-better.py
-# Populated with words after calling prepare_wordlist()
-import random
+# cpellerror.py
+import random, sys
 words = []
 
 def prepare_wordlist():
@@ -33,17 +32,23 @@ def create():
     word_list.insert(i, word_list[i])
 
     # Change a vowel
-    vowels = ['a', 'e', 'i', 'o', 'w']
+    vowels = ['a', 'e', 'i', 'o', 'u']
     for i, a in enumerate(word_list):
         if a in vowels:
-            flip_vowel = random.randint(0, 1) # Binary
+            flip_vowel = random.randint(0, 1) # Binary conditional
             if flip_vowel:
+                # Randomly change vowel if flip_vowel = 1
                 word_list[i] = random.choice(vowels)
 
-    return "".join(word_list)
+    # Return word and the error word
+    return (word, "".join(word_list))
 
 if __name__ == "__main__":
     words = prepare_wordlist()
-
-    while True:
-        print(create())
+    i = 0
+    while i < 500:
+        tup = create()
+        sys.stderr.write(tup[0] + "\n") # Actual words are written to stderr
+        sys.stdout.write(tup[1] + "\n") # Error words are written to stdout
+        i = i + 1
+    print("quit")            # Program ends abruptly if EOF is encountered
