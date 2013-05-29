@@ -2,6 +2,7 @@
 words = []
 
 # Levenshtein distance
+# def lev(s, t, current_min):
 def lev(s, t):
     len_s, len_t = len(s), len(t)
 
@@ -15,6 +16,13 @@ def lev(s, t):
     else:
         cost = 1
 
+    # value = min(lev(s[:len_s-1], t, current_min - 1) + 1, lev(s, t[:len_t-1], current_min - 1) + 1, lev(s[:len_s-1], t[:len_t-1], current_min) + cost)
+
+    # if value < current_min:
+    #   current_min = value
+    #   return value
+    # else:
+    #   return None
     return min(lev(s[:len_s-1], t) + 1, lev(s, t[:len_t-1]) + 1, lev(s[:len_s-1], t[:len_t-1]) + cost)
 
 # http://hetland.org/coding/python/levenshtein.py
