@@ -39,7 +39,14 @@ def levenshtein(a, b):
     return current[n]
 
 def prepare_wordlist():
-    f1 = open('/usr/share/dict/words')
+    # Use the /usr/share/dict/words (~120000 words) OR
+    # The file containing top 5k words in English from http://www.englishclub.com/vocabulary/common-words-5000.htm OR
+    # The file containing top 10k words in English from https://github.com/first20hours/google-10000-english
+    # Difference is in the performance: 50k ~> 1s, 10k ~> 1 - 2s, words file ~> 10 - 12s per result
+
+    # f1 = open('/usr/share/dict/words')
+    f1 = open('words-5k')
+    # f1 = open('words-10k')
 
     tmp_list = f1.readlines()
     wordlist = [f.replace('\n', '') for f in tmp_list]
