@@ -54,9 +54,19 @@ def prepare_wordlist():
 
 def correct(word):
     score_list = []
-    current_min = 100
 
     for f in words:
+        # score_list.append(lev(word, f))
         score_list.append(levenshtein(word, f))
+
+    # Approach 1: Just one word suggestion
+    print(words[score_list.index(min(score_list))])
+
+    # Approach 2: For multiple word suggestions
+    # min_occ = min(score_list)
+    # print("Minimum of score_list: %s" % min_occ)
+    # indices = [i for i, x in enumerate(score_list) if x == min_occ]
+    # for index in indices:
+    #    print(words[index])
 
 words = prepare_wordlist()
