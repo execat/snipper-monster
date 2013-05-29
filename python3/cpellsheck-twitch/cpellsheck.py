@@ -25,22 +25,20 @@ def lev(s, t):
     #   return None
     return min(lev(s[:len_s-1], t) + 1, lev(s, t[:len_t-1]) + 1, lev(s[:len_s-1], t[:len_t-1]) + cost)
 
-# http://hetland.org/coding/python/levenshtein.py
-# More efficient implementation
 def levenshtein(a, b):
     n, m = len(a), len(b)
     if n > m:
         # Make sure n <= m, to use O(min(n,m)) space
-        a, b = b, a
-        n, m = m, n
+        a,b = b,a
+        n,m = m,n
 
-    current = range(n + 1)
-    for i in range(1, m + 1):
-        previous, current = current, [i] + [0]*n
-        for j in range(1, n + 1):
-            add, delete = previous[j] + 1, current[j - 1] + 1
-            change = previous[j - 1]
-            if a[j - 1] != b[i - 1]:
+    current = range(n+1)
+    for i in range(1,m+1):
+        previous, current = current, [i]+[0]*n
+        for j in range(1,n+1):
+            add, delete = previous[j]+1, current[j-1]+1
+            change = previous[j-1]
+            if a[j-1] != b[i-1]:
                 change = change + 1
             current[j] = min(add, delete, change)
 
@@ -62,6 +60,7 @@ def prepare_wordlist():
 
 def correct(word):
     score_list = []
+    current_min = 100
 
     for f in words:
         # score_list.append(lev(word, f))
@@ -77,4 +76,14 @@ def correct(word):
     # for index in indices:
     #    print(words[index])
 
-words = prepare_wordlist()
+if __name__ == "__main__":
+    words = prepare_wordlist()
+
+    # Alternative approaches: remove triple repetition like "sheeep" and replace it by 2 ("sheep")
+    # Penalize words not in the string (peeple matches "peephole" and "people" currently, but penalizing the "h" greater will result in peephole having a greater score
+
+    while True:
+        word = input("Enter a word ('quit' to quit): ")
+        if word == "quit":
+            break
+        correct(word.lower())
