@@ -29,4 +29,6 @@ def correct(word):
     current_min = 100
 
     for f in words:
-        score_list.append(lev(word, f))
+        score_list.append(levenshtein(word, f))
+
+words = prepare_wordlist()
