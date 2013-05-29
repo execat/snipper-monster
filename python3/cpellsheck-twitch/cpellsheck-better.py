@@ -11,12 +11,11 @@ def process_word(word):
     # [ulist.append(f) AND prev = f for f in word if f not prev]
     prev = ''
     ulist = []
+
     for f in word:
         if f is not prev:
             ulist.append(f)
             prev = f
-
-    print(ulist)
 
     # Remove vowels
     prev = ''
@@ -47,12 +46,10 @@ def prepare_wordmap():
     return wordmap
 
 def correct(word):
-    print("Word1: %s" % word)
     if word in words.values():
         return word
     if word not in words:
         word = process_word(word)
-        print("Word2: %s" % word)
         if word in words.keys():
             return words[word]
         else:
@@ -62,7 +59,7 @@ if __name__ == "__main__":
     words = prepare_wordmap()
 
     while True:
-        word = input("Enter a word ('quit' to quit): ")
+        word = input("> ")
         if word == "quit":
             break
         print(correct(word.lower()))
