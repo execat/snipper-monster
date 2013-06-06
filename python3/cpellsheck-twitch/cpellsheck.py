@@ -1,4 +1,5 @@
 # cpellsheck.py
+import sys
 # Populated with words after calling prepare_wordlist()
 words = {}
 
@@ -62,4 +63,5 @@ if __name__ == "__main__":
         word = input("> ")
         if word == "quit":
             break
+        sys.stderr.write(word + "\n")
         print(correct(word.lower()))
