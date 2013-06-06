@@ -3,7 +3,7 @@
 # 1. Run cpellerror and store the original words (for later comparison) in
 # original file. Pass the results (error words) to cpellsheck and redirect the
 # results to ans file
-python cpellerror.py 2> original | python cpellsheck.py > ans
+python cpellerror.py 2> original | python cpellsheck.py > ans 2> error
 
 # 2. Filter answers from "> " and store that to answer file. Remove ans file.
 cat ans | cut -d" " -f2 > answer
